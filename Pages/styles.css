@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(to right, #000000, #50b3a2);
+    color: white;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    animation: fadeIn 2s;
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se adapten en dispositivos pequeños */
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap; /* Permite que los enlaces se ajusten en filas si es necesario */
+}
+
+header .menu a {
+    color: white;
+    text-decoration: none;
+}
+
+header .logo {
+    max-width: 15%; /* Mantiene el logo pequeño */
+    height: auto;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* Asegura que aparezca sobre otros elementos */
+}
+
+.dropdown li a {
+    color: black;
+    padding: 8px 16px;
+    display: block;
+}
+
+.menu li:hover .dropdown {
+    display: block;
+}
+
+.intro {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    gap: 2rem;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center; /* Centra el contenido en dispositivos pequeños */
+}
+
+.left-photo {
+    max-width: 100%; /* Asegura que la imagen no desborde */
+    height: auto;
+    border-radius: 8px;
+}
+
+.services {
+    padding: 2rem;
+    background: #decffcc7;
+}
+
+.service-box {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten */
+    justify-content: center; /* Centra los elementos en pantallas pequeñas */
+    gap: 1rem;
+}
+
+.service {
+    background: rgb(239, 250, 255);
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    flex: 1 1 calc(33.333% - 1rem); /* Ajusta automáticamente el ancho */
+    box-sizing: border-box;
+    max-width: calc(33.333% - 1rem);
+}
+
+footer {
+    background: linear-gradient(to right, #ff8f8f, #fd5000);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+}
+
+footer h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column; /* Ajusta los elementos verticalmente */
+    }
+
+    header .menu {
+        flex-direction: column; /* Coloca los enlaces en una columna */
+        gap: 0.5rem;
+    }
+
+    .intro {
+        flex-direction: column; /* Ajusta el diseño a una sola columna */
+    }
+
+    .service-box {
+        flex-direction: column; /* Los elementos se apilan verticalmente */
+        align-items: center;
+    }
+
+    .service {
+        max-width: 100%; /* Ocupa el ancho completo en pantallas pequeñas */
+    }
+}
