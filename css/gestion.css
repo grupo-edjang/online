@@ -1,0 +1,287 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+/* Header Gradient con Transición Suave */
+.gradient-header {
+    background: linear-gradient(90deg, #014e1b, #e0e0e0, #680101, #000057);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    text-align: end;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: -11px;
+    left: 0;
+}
+
+.logo img {
+    width: 110px;
+    height: auto;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el navbar horizontalmente */
+    justify-content: space-between; /* Espacio entre logo y menú */
+}
+
+/* Menú Hamburguesa (Visible en Todas las Pantallas) */
+.menu-toggle {
+    display: grid; /* Mostrar siempre */
+    cursor: pointer;
+    z-index: 100;
+    position: absolute; /* Posicionado absolutamente */
+    top: 15px;
+    right: 10px; /* Mover a la derecha */
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 3px 0; /* Separación entre las barras */
+}
+
+/* Enlaces del Menú (Ocultos por defecto) */
+.nav-links {
+    display: flex; /* Oculto inicialmente */
+    flex-direction: column;
+    position: fixed; /* Fijo en la parte derecha */
+    top: 80px; /* Justo debajo del header */
+    right: -250px; /* Inicialmente oculto a la derecha */
+    width: 250px; /* Ancho fijo para el menú lateral */
+    height: calc(100vh - 80px); /* Altura completa menos el header */
+    background-color: rgb(0, 13, 70);
+    z-index: 100;
+    transition: right 0.3s ease; /* Animación suave */
+    padding: 20px; /* Añadir relleno al menú */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para mejor visualización */
+}
+
+.nav-links.active {
+    right: 0; /* Mostrar al activar */
+}
+
+.nav-links li {
+    text-align: left; /* Alinear texto a la izquierda */
+    padding: 10px 0; /* Añadir relleno vertical */
+    border-bottom: 1px solid #ddd; /* Línea divisoria entre enlaces */
+}
+
+.nav-links li:last-child {
+    border-bottom: none; /* Eliminar línea divisoria del último enlace */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem; /* Tamaño de fuente legible */
+    padding: 5px 0; /* Relleno interno */
+    transition: color 0.3s ease; /* Efecto hover */
+}
+
+.nav-links a:hover {
+    color: #ff7e5f; /* Cambiar color al pasar el mouse */
+}
+
+/* Sección Centralizada de Información */
+.info-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #f0efef;
+    margin: 20px 0;
+}
+
+.info-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.info-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Services Grid (Solo para gestión-logistica.html) */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+    grid-template-rows: repeat(2, auto); /* Dos filas */
+    gap: 20px; /* Espaciado entre elementos */
+    justify-items: center; /* Centrar elementos horizontalmente */
+    padding: 40px;
+}
+
+.service-item {
+    width: 100%; /* Ancho completo dentro de la cuadrícula */
+    text-align: center; /* Alinear contenido al centro */
+    background-color: #f9f9f9; /* Fondo suave */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
+    padding: 20px; /* Relleno interno */
+}
+
+.service-item:hover {
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el mouse */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Añadir sombra más pronunciada */
+}
+
+.service-item img {
+    width: 100%; /* Imágenes ocupan todo el ancho */
+    height: auto; /* Mantener proporciones */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-bottom: 10px; /* Espacio debajo de la imagen */
+}
+
+.service-item h2 {
+    font-size: 1.5rem; /* Tamaño de fuente */
+    margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+.service-item p {
+    font-size: 1rem; /* Tamaño de fuente */
+    line-height: 1.5; /* Espaciado entre líneas */
+    margin-bottom: 20px; /* Espacio debajo del párrafo */
+}
+
+.btn-more-info {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #001e5f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-more-info:hover {
+    background-color: #ff5722;
+    transform: scale(1.1); /* Aumentar ligeramente el tamaño al hacer hover */
+}
+
+/* Responsive Design para Services Grid */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* Una sola columna */
+        grid-template-rows: repeat(8, auto); /* Ocho filas (uno por servicio) */
+    }
+
+    .service-item {
+        width: 90%; /* Ajustar ancho para dispositivos móviles */
+        margin: 0 auto; /* Centrar el servicio */
+    }
+}
+
+
+
+
+/* Sección de Instituciones */
+.institutions-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #f4f4f4;
+}
+
+.institution-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.institution {
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s ease; /* Animación suave al pasar el mouse */
+}
+
+.institution:hover {
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+}
+
+.institution img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.institution h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.institution p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Responsive Design para Grid de Instituciones */
+@media (max-width: 768px) {
+    .institution-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Botones de Contacto */
+.btn-contact {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ff7e5f;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: #ff5722;
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño */
+}
